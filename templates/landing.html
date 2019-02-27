@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load staticfiles %}
 
 {% block content %}
 
 <div class="row">
   <span> Just a sample text. </span>
-  <img src="{{ picture.url }}" alt="sample">
+  {% for pic in picture %}
+	<img src={{ pic.file.url }}>
+  {% endfor %}
+  <!-- The current issue is that you cannot find/load the image from the base_folder, I think the issue is because there is no static folder within the app.-->
+  
 </div>
 
 {% endblock %}

@@ -7,4 +7,4 @@ def home(request):
     Homepage for gallery of pictures.
     """
     picture = Picture.objects.all()
-    return render(request, 'landing.html', {picture: 'picture'})
+    return render(request, 'landing.html', {'picture': picture})
