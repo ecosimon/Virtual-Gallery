@@ -1,15 +1,16 @@
 from django.db import models
+from core import settings
 
 class Picture(models.Model):
     """
     This class holds the picture model. 
     Attributes:
         name: CharField which holds the name.
-        url: UrlField which is the link to the picture and to our heroku database.
+        upload: UploadField, should be an option to upload a picture.
         available: BooleanField, Admin can turn this on or off to showcase the image on the site.
     """
     name = models.CharField(max_length=255)
-    url = models.URLField(max_length=200)
+    file = models.FileField(upload_to='settings.MEDIA_ROOT', max_length=100)
     available = models.BooleanField(default=True)
 	
     def __str__(self):

@@ -90,7 +90,7 @@ DATABASES = {
 }
 
 
-# Password validation
+# Password validationBAS
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -128,3 +128,7 @@ STATICFILES_LOCATION = 'static'
 STATICFILES_DIR = (
 	os.path.join(BASE_DIR, 'staticfiles'),
 )
+
+# MEDIA SETTINGS
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
