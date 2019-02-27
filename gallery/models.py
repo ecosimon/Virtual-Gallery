@@ -10,7 +10,7 @@ class Picture(models.Model):
         available: BooleanField, Admin can turn this on or off to showcase the image on the site.
     """
     name = models.CharField(max_length=255)
-    file = models.FileField(upload_to='settings.MEDIA_ROOT', max_length=100)
+    file = models.FileField(upload_to='img', max_length=100, blank=True)
     available = models.BooleanField(default=True)
 	
     def __str__(self):
